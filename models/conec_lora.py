@@ -166,56 +166,72 @@ class Learner(BaseLearner):
             losses = 0.0
             correct, total = 0, 0
 
-            # for name, param in self._network.backbone.cur_adapters[0][1].named_parameters():
-            #     print(f"Parameter: {name}, Requires Gradient: {param.requires_grad}")
-            # for name, param in self._network.backbone.cur_adapters[-1][1].named_parameters():
-            #     print(f"Parameter: {name}, Requires Gradient: {param.requires_grad}")
-
             for batch_index, batch in enumerate(train_loader):
                 batch = ou.to_device(batch, self._device)
                 _, inputs, targets = batch
-                
-                output = self._network.forward(inputs, test=False)
-
-                logits = output["logits"]
-                
                 targets_from_zero = targets % self.class_num
-                
-                loss = 0.0
-                
-                loss_ce_classification = F.cross_entropy(logits, targets_from_zero)  # From equation 12
-
-                loss = loss + loss_ce_classification
-                
-                # Knowledge-distillation loss
                 if self._cur_domain_id > 0:
-                    
                     # We forward the inputs with the shared LoRAs for the current domain and previous domain.
                     out_new, out_teacher = self._network.forward_kd(inputs, self._cur_domain_id)
                     out_new_logits = out_new["logits"]
                     out_teacher_logits = out_teacher["logits"]
                     loss_kd = self.lambda_1 * _KD_loss(out_new_logits, out_teacher_logits, T=self.args.kd_temperature)
                     
+                    # Step 1: backward KD + redistribution
                     optimizer.zero_grad()
                     loss_kd.backward()
                     
                     for block_id in self._network.backbone.LoRA_shared_layers_ids_list:
-                        
+
                         for jj in range(len(self._network.backbone.LoRA_qkv_mask)):
                             if self._network.backbone.LoRA_qkv_mask[jj] == 1:
                                 temp_weights = 1. * torch.norm(self._network.backbone.LoRAs_dict[f'{self._cur_domain_id - 1},{block_id}'][jj].A.weight, dim=1)
-                                
+
                                 temp_weights = 1. * len(temp_weights) * temp_weights / torch.sum(temp_weights)
                                 
                                 self._network.backbone.LoRAs_dict[f'{self._cur_domain_id},{block_id}'][jj].A.weight.grad = temp_weights.unsqueeze(1) * self._network.backbone.LoRAs_dict[f'{self._cur_domain_id},{block_id}'][jj].A.weight.grad
                     
+                    # Save KD gradients that have redistributed
+                    kd_grads = {}
+                    for name, param in self._network.named_parameters():
+                        if param.grad is not None:
+                            kd_grads[name] = param.grad.clone()
+                    
+                    # Step 2: CE loss — new forward, new graph
+                    output = self._network.forward(inputs, test=False)
+                    logits = output["logits"]
+                    loss_ce = F.cross_entropy(logits, targets_from_zero)
+                    
+                    optimizer.zero_grad()
+                    loss_ce.backward()
+                    
+                    # Step 3: Add KD gradients to CE gradients
+                    for name, param in self._network.named_parameters():
+                        if name in kd_grads:
+                            if param.grad is not None:
+                                param.grad += kd_grads[name]
+                            else:
+                                param.grad = kd_grads[name].clone()
+                    
                     optimizer.step()
-                
-                optimizer.zero_grad()
-                loss.backward()
-                optimizer.step()
-                losses += loss.item()
-                _, preds = torch.max(logits, dim=1)
+
+                    # Update metrics
+                    losses += loss_ce.item() + loss_kd.item()
+                    _, preds = torch.max(logits, dim=1)
+
+                else:
+                    # Task 0 — CE loss only
+                    output = self._network.forward(inputs, test=False)
+                    logits = output["logits"]
+                    loss_ce = F.cross_entropy(logits, targets_from_zero)
+                    
+                    optimizer.zero_grad()
+                    loss_ce.backward()
+                    optimizer.step()
+                    
+                    # Update metrics
+                    losses += loss_ce.item()
+                    _, preds = torch.max(logits, dim=1)
 
                 correct += preds.eq(targets_from_zero.expand_as(preds)).cpu().sum()
                 total += len(targets_from_zero)

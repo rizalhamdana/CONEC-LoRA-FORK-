@@ -140,6 +140,8 @@ class OurNet(BaseNet):
             self.class_num = 50
         elif args["dataset"] == "officehome":
             self.class_num = 65
+        elif args["dataset"] == "deforest_dil":
+            self.class_num = 6
         else:
             raise ValueError("Unknown datasets: {}.".format(args["dataset"]))
         

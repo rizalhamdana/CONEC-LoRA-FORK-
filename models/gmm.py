@@ -14,8 +14,9 @@ def GMM_EM(features, n_components, max_iter: int = 100, tol=1e-3):
                           init_params='kmeans',
                           max_iter=max_iter,
                           tol=tol,
+                          reg_covar=1e-3,
                           verbose=0)
-    gmm.fit(features)
+    gmm.fit(features.astype(np.float64))
 
     # [k, dim], [k, dim, dim], [k]
     return (gmm.means_, gmm.covariances_, gmm.weights_)

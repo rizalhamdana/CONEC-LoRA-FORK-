@@ -1,0 +1,442 @@
+2026-03-17 15:07:46,913 [trainer.py:178] => ----------------------------------------------------------------------------------------------------
+2026-03-17 15:07:46,932 [trainer.py:182] => Python version: 3.12.13
+2026-03-17 15:07:46,933 [trainer.py:183] => PyTorch version: 2.10.0+cu130,TorchVision version: 0.25.0+cu130
+2026-03-17 15:07:46,933 [trainer.py:184] => GPU Name: NVIDIA GeForce RTX 4090
+2026-03-17 15:07:46,933 [trainer.py:185] => Driver: 580.126.09
+2026-03-17 15:07:46,933 [trainer.py:188] => config: ./exps/deforest_dil.json
+2026-03-17 15:07:46,933 [trainer.py:188] => order: 1
+2026-03-17 15:07:46,933 [trainer.py:188] => device: [device(type='cuda', index=0)]
+2026-03-17 15:07:46,933 [trainer.py:188] => prefix: CONEC_LoRA
+2026-03-17 15:07:46,933 [trainer.py:188] => dataset: deforest_dil
+2026-03-17 15:07:46,933 [trainer.py:188] => data_path: /home/rizal/rizal_projects/DeforestDIL/datasets/deforest_dil
+2026-03-17 15:07:46,933 [trainer.py:188] => total_sessions: 5
+2026-03-17 15:07:46,933 [trainer.py:188] => shuffle: False
+2026-03-17 15:07:46,933 [trainer.py:188] => init_cls: 6
+2026-03-17 15:07:46,933 [trainer.py:188] => increment: 6
+2026-03-17 15:07:46,933 [trainer.py:188] => model_name: conec_lora
+2026-03-17 15:07:46,933 [trainer.py:188] => backbone_type: vit_base_patch16_224_conec_lora
+2026-03-17 15:07:46,933 [trainer.py:188] => temporary_classifier_type: ClassifierType.Single_Stochastic_Classifier
+2026-03-17 15:07:46,933 [trainer.py:188] => classifier_type: ClassifierType.Separate_Stochastic_Classifiers
+2026-03-17 15:07:46,933 [trainer.py:188] => use_proxy_classifier: True
+2026-03-17 15:07:46,933 [trainer.py:188] => cache_synthetic_embeddings: True
+2026-03-17 15:07:46,933 [trainer.py:188] => max_iter_for_GMM: 150
+2026-03-17 15:07:46,933 [trainer.py:188] => tol_for_GMM: 0.002
+2026-03-17 15:07:46,933 [trainer.py:188] => max_number_of_embeddings_in_memory: 500000
+2026-03-17 15:07:46,933 [trainer.py:188] => LoRA_downsize_dimension: 8
+2026-03-17 15:07:46,933 [trainer.py:188] => generation_strategy: GenerationStrategy.GMM_with_generator_loss
+2026-03-17 15:07:46,933 [trainer.py:188] => n_components: 2
+2026-03-17 15:07:46,933 [trainer.py:188] => use_CLS_token_for_domain_classification: False
+2026-03-17 15:07:46,933 [trainer.py:188] => normalize_features_for_domain_classification: False
+2026-03-17 15:07:46,933 [trainer.py:188] => chosen_layers_for_intermediate_domain_classifiers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
+2026-03-17 15:07:46,933 [trainer.py:188] => confidence_threshold: 0.9
+2026-03-17 15:07:46,933 [trainer.py:188] => freeze_B_matrices_in_shared_LoRAs: True
+2026-03-17 15:07:46,933 [trainer.py:188] => epochs: 25
+2026-03-17 15:07:46,933 [trainer.py:188] => epochs_domain_classifier_training: 25
+2026-03-17 15:07:46,933 [trainer.py:188] => use_transformation_module: True
+2026-03-17 15:07:46,933 [trainer.py:188] => lr_default: 0.02
+2026-03-17 15:07:46,933 [trainer.py:188] => lr_LoRAs: 0.02
+2026-03-17 15:07:46,933 [trainer.py:188] => lr_classifier: 0.02
+2026-03-17 15:07:46,933 [trainer.py:188] => lr_temporary_classifier: 0.02
+2026-03-17 15:07:46,933 [trainer.py:188] => lr_Auxiliary_network: 0.02
+2026-03-17 15:07:46,933 [trainer.py:188] => lr_domain_classifiers: 0.002
+2026-03-17 15:07:46,933 [trainer.py:188] => lr_transformation_module: 0.0001
+2026-03-17 15:07:46,933 [trainer.py:188] => weight_decay: 0.0002
+2026-03-17 15:07:46,933 [trainer.py:188] => weight_decay_classifiers: 2e-05
+2026-03-17 15:07:46,933 [trainer.py:188] => weight_decay_domain_classifiers: 0.0002
+2026-03-17 15:07:46,933 [trainer.py:188] => weight_decay_transformation_module: 0.0002
+2026-03-17 15:07:46,933 [trainer.py:188] => bias_domain_classifier: False
+2026-03-17 15:07:46,933 [trainer.py:188] => min_lr: 0
+2026-03-17 15:07:46,933 [trainer.py:188] => optimizer: sgd
+2026-03-17 15:07:46,933 [trainer.py:188] => scheduler: cosine
+2026-03-17 15:07:46,933 [trainer.py:188] => lambda_1: 5.0
+2026-03-17 15:07:46,933 [trainer.py:188] => lambda_2: 2.0
+2026-03-17 15:07:46,933 [trainer.py:188] => margin: 1.0
+2026-03-17 15:07:46,934 [trainer.py:188] => kd_temperature: 2.0
+2026-03-17 15:07:46,934 [trainer.py:188] => LoRA_qkv_mask: [1, 0, 1]
+2026-03-17 15:07:46,934 [trainer.py:188] => LoRA_shared_layers_ids_list: ['0', '1', '2', '3', '4', '5']
+2026-03-17 15:07:46,934 [trainer.py:188] => LoRA_domain_specfic_layers_ids_list: ['6', '7', '8', '9', '10', '11']
+2026-03-17 15:07:46,934 [trainer.py:188] => use_block_weight: False
+2026-03-17 15:07:46,934 [trainer.py:188] => use_reweight: False
+2026-03-17 15:07:46,934 [trainer.py:188] => embd_dim: 768
+2026-03-17 15:07:46,934 [trainer.py:188] => seed: 0
+2026-03-17 15:07:46,934 [trainer.py:188] => epsilon: 1e-08
+2026-03-17 15:07:46,934 [trainer.py:188] => init_milestones: [20, 30, 40]
+2026-03-17 15:07:46,934 [trainer.py:188] => lr_default_decay: 0.1
+2026-03-17 15:07:46,934 [trainer.py:188] => milestones: [20, 30]
+2026-03-17 15:07:46,934 [trainer.py:188] => batch_size: 64
+2026-03-17 15:07:46,934 [trainer.py:188] => num_workers: 8
+2026-03-17 15:07:46,934 [trainer.py:188] => save_model_after_each_task: True
+2026-03-17 15:07:46,934 [trainer.py:188] => debugging: False
+2026-03-17 15:07:46,934 [trainer.py:188] => logdir: logs
+2026-03-17 15:07:46,934 [trainer.py:188] => save_last_model: False
+2026-03-17 15:07:46,934 [trainer.py:188] => load_path: 
+2026-03-17 15:07:46,934 [trainer.py:188] => temperature_stochastic_classifier: 16.0
+2026-03-17 15:07:46,934 [trainer.py:188] => UMAP: False
+2026-03-17 15:07:46,934 [trainer.py:189] => ----------------------------------------------------------------------------------------------------
+2026-03-17 15:07:46,995 [data_manager.py:166] => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+2026-03-17 15:07:47,772 [_builder.py:217] => Loading pretrained weights from Hugging Face hub (timm/vit_base_patch16_224.augreg2_in21k_ft_in1k)
+2026-03-17 15:07:48,112 [_client.py:1025] => HTTP Request: HEAD https://huggingface.co/timm/vit_base_patch16_224.augreg2_in21k_ft_in1k/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-03-17 15:07:48,113 [_hub.py:232] => [timm/vit_base_patch16_224.augreg2_in21k_ft_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2026-03-17 15:07:48,171 [conec_lora.py:109] => Learning on 0-6
+2026-03-17 15:07:48,223 [our_utils.py:157] => Number of learnable parameters of LoRAs regularized: 221184
+2026-03-17 15:07:48,223 [our_utils.py:157] => Number of learnable parameters of proxy_fc regularized: 9216
+2026-03-17 15:07:48,223 [our_utils.py:159] => Total number of learnable parameters: 230400
+2026-03-17 15:07:48,223 [conec_lora.py:161] => Training the domain 0 ...
+2026-03-17 15:08:25,855 [conec_lora.py:252] => Task 0, Epoch 1/25 => Loss 1.145, Train_accy 54.69
+2026-03-17 15:09:03,383 [conec_lora.py:252] => Task 0, Epoch 2/25 => Loss 1.020, Train_accy 59.78
+2026-03-17 15:09:40,962 [conec_lora.py:252] => Task 0, Epoch 3/25 => Loss 0.987, Train_accy 60.77
+2026-03-17 15:10:18,531 [conec_lora.py:252] => Task 0, Epoch 4/25 => Loss 0.969, Train_accy 61.55
+2026-03-17 15:10:56,089 [conec_lora.py:252] => Task 0, Epoch 5/25 => Loss 0.954, Train_accy 61.45
+2026-03-17 15:11:33,630 [conec_lora.py:252] => Task 0, Epoch 6/25 => Loss 0.934, Train_accy 62.99
+2026-03-17 15:12:11,189 [conec_lora.py:252] => Task 0, Epoch 7/25 => Loss 0.925, Train_accy 63.17
+2026-03-17 15:12:48,736 [conec_lora.py:252] => Task 0, Epoch 8/25 => Loss 0.912, Train_accy 63.79
+2026-03-17 15:13:26,314 [conec_lora.py:252] => Task 0, Epoch 9/25 => Loss 0.900, Train_accy 64.30
+2026-03-17 15:14:03,895 [conec_lora.py:252] => Task 0, Epoch 10/25 => Loss 0.893, Train_accy 64.48
+2026-03-17 15:14:41,482 [conec_lora.py:252] => Task 0, Epoch 11/25 => Loss 0.879, Train_accy 64.99
+2026-03-17 15:15:19,034 [conec_lora.py:252] => Task 0, Epoch 12/25 => Loss 0.865, Train_accy 65.58
+2026-03-17 15:15:56,609 [conec_lora.py:252] => Task 0, Epoch 13/25 => Loss 0.859, Train_accy 65.93
+2026-03-17 15:16:34,195 [conec_lora.py:252] => Task 0, Epoch 14/25 => Loss 0.847, Train_accy 66.08
+2026-03-17 15:17:11,760 [conec_lora.py:252] => Task 0, Epoch 15/25 => Loss 0.830, Train_accy 66.94
+2026-03-17 15:17:49,332 [conec_lora.py:252] => Task 0, Epoch 16/25 => Loss 0.819, Train_accy 67.23
+2026-03-17 15:18:26,906 [conec_lora.py:252] => Task 0, Epoch 17/25 => Loss 0.804, Train_accy 68.06
+2026-03-17 15:19:04,493 [conec_lora.py:252] => Task 0, Epoch 18/25 => Loss 0.793, Train_accy 68.18
+2026-03-17 15:19:42,090 [conec_lora.py:252] => Task 0, Epoch 19/25 => Loss 0.783, Train_accy 69.06
+2026-03-17 15:20:19,704 [conec_lora.py:252] => Task 0, Epoch 20/25 => Loss 0.773, Train_accy 69.35
+2026-03-17 15:20:57,278 [conec_lora.py:252] => Task 0, Epoch 21/25 => Loss 0.765, Train_accy 69.55
+2026-03-17 15:21:34,852 [conec_lora.py:252] => Task 0, Epoch 22/25 => Loss 0.756, Train_accy 70.25
+2026-03-17 15:22:12,452 [conec_lora.py:252] => Task 0, Epoch 23/25 => Loss 0.745, Train_accy 70.62
+2026-03-17 15:22:50,023 [conec_lora.py:252] => Task 0, Epoch 24/25 => Loss 0.743, Train_accy 70.85
+2026-03-17 15:23:27,610 [conec_lora.py:252] => Task 0, Epoch 25/25 => Loss 0.739, Train_accy 70.75
+2026-03-17 15:23:27,611 [conec_lora.py:381] => Calculating the prototypes for the classifier ...
+2026-03-17 15:23:27,611 [conec_lora.py:350] => Obtaining the embeddings for domain 0
+2026-03-17 15:23:47,336 [conec_lora.py:439] => Training the domain classifier ...
+2026-03-17 15:23:47,336 [conec_lora.py:424] => Finding the number of samples to be generated ...
+2026-03-17 15:23:47,337 [conec_lora.py:430] =>     We use 0 old + 64 new samples for each batch
+2026-03-17 15:23:47,410 [conec_lora.py:559] => ==> Computing the statistics ...
+2026-03-17 15:23:47,410 [conec_lora.py:293] => Obtaining the embeddings for domain 0 ...
+2026-03-17 15:24:05,040 [conec_lora.py:572] =>     Statistics are ready for task: 0
+2026-03-17 15:24:05,040 [conec_lora.py:576] => ==> Compression ...
+2026-03-17 15:27:35,228 [conec_lora.py:588] => ==> Compression is done!
+2026-03-17 15:27:53,508 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [1/25] lr 0.00199 Loss 0.0914, Train_acc 99.19
+2026-03-17 15:28:11,723 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [2/25] lr 0.00197 Loss 0.0074, Train_acc 100.00
+2026-03-17 15:28:30,011 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [3/25] lr 0.00193 Loss 0.0048, Train_acc 100.00
+2026-03-17 15:28:48,364 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [4/25] lr 0.00188 Loss 0.0036, Train_acc 100.00
+2026-03-17 15:29:06,744 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [5/25] lr 0.00181 Loss 0.0029, Train_acc 100.00
+2026-03-17 15:29:25,162 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [6/25] lr 0.00173 Loss 0.0025, Train_acc 100.00
+2026-03-17 15:29:43,586 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [7/25] lr 0.00164 Loss 0.0022, Train_acc 100.00
+2026-03-17 15:30:02,034 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [8/25] lr 0.00154 Loss 0.0020, Train_acc 100.00
+2026-03-17 15:30:20,467 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [9/25] lr 0.00143 Loss 0.0018, Train_acc 100.00
+2026-03-17 15:30:38,922 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [10/25] lr 0.00131 Loss 0.0017, Train_acc 100.00
+2026-03-17 15:30:57,368 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [11/25] lr 0.00119 Loss 0.0016, Train_acc 100.00
+2026-03-17 15:31:15,821 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [12/25] lr 0.00106 Loss 0.0015, Train_acc 100.00
+2026-03-17 15:31:34,292 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [13/25] lr 0.00094 Loss 0.0014, Train_acc 100.00
+2026-03-17 15:31:52,740 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [14/25] lr 0.00081 Loss 0.0013, Train_acc 100.00
+2026-03-17 15:32:11,174 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [15/25] lr 0.00069 Loss 0.0013, Train_acc 100.00
+2026-03-17 15:32:29,587 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [16/25] lr 0.00057 Loss 0.0013, Train_acc 100.00
+2026-03-17 15:32:48,024 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [17/25] lr 0.00046 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:33:06,493 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [18/25] lr 0.00036 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:33:24,967 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [19/25] lr 0.00027 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:33:43,431 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [20/25] lr 0.00019 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:34:01,884 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [21/25] lr 0.00012 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:34:20,359 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [22/25] lr 0.00007 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:34:38,817 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [23/25] lr 0.00003 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:34:57,282 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [24/25] lr 0.00001 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:35:15,731 [conec_lora.py:549] => Domain classifier training: Task 0, Epoch [25/25] lr 0.00000 Loss 0.0012, Train_acc 100.00
+2026-03-17 15:35:15,896 [conec_lora.py:715] => Evaluating on the test set ...
+2026-03-17 15:35:25,718 [trainer.py:102] => CNN (w/o oracle): {'total': 52.11, '0': 52.11, '0_many': 52.19, '0_medium': 27.27, '0_few': -1.0, '00-01': 42.6, '02-03': 78.78, '04-05': 48.93, 'old': 0.0, 'new': 52.11, 'many_shot': np.float64(52.19), 'medium_shot': np.float64(27.27)}
+2026-03-17 15:35:25,719 [trainer.py:107] => Accuracies (w/o oracle) for order 1: [52.11] -> Avg.: 52.11
+2026-03-17 15:35:25,719 [trainer.py:110] => CNN (with oracle): {'total': 52.26, '0': 52.26, '0_many': 52.34, '0_medium': 27.27, '0_few': -1.0, '00-01': 42.94, '02-03': 78.78, '04-05': 49.0, 'old': 0.0, 'new': 52.26, 'many_shot': np.float64(52.34), 'medium_shot': np.float64(27.27)}
+2026-03-17 15:35:25,719 [trainer.py:115] => Accuracies (with oracle) for order 1: [52.26] -> Avg.: 52.26
+2026-03-17 15:35:25,719 [trainer.py:119] => Domain classification accuracies (after each domain) for order 1:  [100.00] -> Avg.: 100.00
+2026-03-17 15:35:25,875 [trainer.py:141] => The parameters are saved after task: 0!
+2026-03-17 15:35:25,875 [conec_lora.py:109] => Learning on 6-12
+2026-03-17 15:35:25,879 [our_utils.py:157] => Number of learnable parameters of LoRAs regularized: 221184
+2026-03-17 15:35:25,880 [our_utils.py:157] => Number of learnable parameters of proxy_fc regularized: 9216
+2026-03-17 15:35:25,880 [our_utils.py:159] => Total number of learnable parameters: 230400
+2026-03-17 15:35:25,880 [conec_lora.py:161] => Training the domain 1 ...
+2026-03-17 15:35:43,925 [conec_lora.py:252] => Task 1, Epoch 1/25 => Loss 1.356, Train_accy 60.65
+2026-03-17 15:36:01,969 [conec_lora.py:252] => Task 1, Epoch 2/25 => Loss 0.914, Train_accy 66.00
+2026-03-17 15:36:20,013 [conec_lora.py:252] => Task 1, Epoch 3/25 => Loss 0.875, Train_accy 66.53
+2026-03-17 15:36:38,060 [conec_lora.py:252] => Task 1, Epoch 4/25 => Loss 0.846, Train_accy 67.72
+2026-03-17 15:36:56,108 [conec_lora.py:252] => Task 1, Epoch 5/25 => Loss 0.802, Train_accy 69.01
+2026-03-17 15:37:14,166 [conec_lora.py:252] => Task 1, Epoch 6/25 => Loss 0.777, Train_accy 69.81
+2026-03-17 15:37:32,202 [conec_lora.py:252] => Task 1, Epoch 7/25 => Loss 0.730, Train_accy 71.56
+2026-03-17 15:37:50,244 [conec_lora.py:252] => Task 1, Epoch 8/25 => Loss 0.709, Train_accy 73.01
+2026-03-17 15:38:08,313 [conec_lora.py:252] => Task 1, Epoch 9/25 => Loss 0.682, Train_accy 73.94
+2026-03-17 15:38:26,350 [conec_lora.py:252] => Task 1, Epoch 10/25 => Loss 0.642, Train_accy 75.79
+2026-03-17 15:38:44,407 [conec_lora.py:252] => Task 1, Epoch 11/25 => Loss 0.616, Train_accy 77.04
+2026-03-17 15:39:02,451 [conec_lora.py:252] => Task 1, Epoch 12/25 => Loss 0.585, Train_accy 77.83
+2026-03-17 15:39:20,506 [conec_lora.py:252] => Task 1, Epoch 13/25 => Loss 0.543, Train_accy 79.26
+2026-03-17 15:39:38,548 [conec_lora.py:252] => Task 1, Epoch 14/25 => Loss 0.513, Train_accy 81.78
+2026-03-17 15:39:56,597 [conec_lora.py:252] => Task 1, Epoch 15/25 => Loss 0.492, Train_accy 82.39
+2026-03-17 15:40:14,647 [conec_lora.py:252] => Task 1, Epoch 16/25 => Loss 0.459, Train_accy 83.55
+2026-03-17 15:40:32,696 [conec_lora.py:252] => Task 1, Epoch 17/25 => Loss 0.425, Train_accy 84.96
+2026-03-17 15:40:50,749 [conec_lora.py:252] => Task 1, Epoch 18/25 => Loss 0.402, Train_accy 85.99
+2026-03-17 15:41:08,774 [conec_lora.py:252] => Task 1, Epoch 19/25 => Loss 0.368, Train_accy 87.76
+2026-03-17 15:41:26,815 [conec_lora.py:252] => Task 1, Epoch 20/25 => Loss 0.346, Train_accy 88.80
+2026-03-17 15:41:44,855 [conec_lora.py:252] => Task 1, Epoch 21/25 => Loss 0.332, Train_accy 89.35
+2026-03-17 15:42:02,913 [conec_lora.py:252] => Task 1, Epoch 22/25 => Loss 0.312, Train_accy 90.31
+2026-03-17 15:42:20,952 [conec_lora.py:252] => Task 1, Epoch 23/25 => Loss 0.301, Train_accy 91.18
+2026-03-17 15:42:38,989 [conec_lora.py:252] => Task 1, Epoch 24/25 => Loss 0.288, Train_accy 91.50
+2026-03-17 15:42:57,037 [conec_lora.py:252] => Task 1, Epoch 25/25 => Loss 0.292, Train_accy 91.21
+2026-03-17 15:42:57,037 [conec_lora.py:381] => Calculating the prototypes for the classifier ...
+2026-03-17 15:42:57,037 [conec_lora.py:350] => Obtaining the embeddings for domain 1
+2026-03-17 15:43:02,833 [conec_lora.py:439] => Training the domain classifier ...
+2026-03-17 15:43:02,833 [conec_lora.py:424] => Finding the number of samples to be generated ...
+2026-03-17 15:43:02,833 [conec_lora.py:430] =>     We use 32 old + 32 new samples for each batch
+2026-03-17 15:43:02,907 [conec_lora.py:559] => ==> Computing the statistics ...
+2026-03-17 15:43:02,907 [conec_lora.py:293] => Obtaining the embeddings for domain 1 ...
+2026-03-17 15:43:08,146 [conec_lora.py:572] =>     Statistics are ready for task: 1
+2026-03-17 15:43:08,146 [conec_lora.py:576] => ==> Compression ...
+2026-03-17 15:44:01,493 [conec_lora.py:588] => ==> Compression is done!
+2026-03-17 15:44:01,568 [conec_lora.py:592] => => Generating synthetic embeddings
+2026-03-17 15:44:13,271 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [1/25] lr 0.00199 Loss 135.6510, Train_acc 54.74
+2026-03-17 15:44:19,537 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [2/25] lr 0.00197 Loss 125.6980, Train_acc 59.30
+2026-03-17 15:44:25,751 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [3/25] lr 0.00193 Loss 124.0063, Train_acc 63.26
+2026-03-17 15:44:32,015 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [4/25] lr 0.00188 Loss 122.5845, Train_acc 65.16
+2026-03-17 15:44:38,287 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [5/25] lr 0.00181 Loss 121.0970, Train_acc 66.93
+2026-03-17 15:44:44,551 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [6/25] lr 0.00173 Loss 120.4610, Train_acc 67.66
+2026-03-17 15:44:50,810 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [7/25] lr 0.00164 Loss 119.6022, Train_acc 68.93
+2026-03-17 15:44:57,283 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [8/25] lr 0.00154 Loss 119.1990, Train_acc 69.35
+2026-03-17 15:45:03,588 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [9/25] lr 0.00143 Loss 118.2614, Train_acc 72.21
+2026-03-17 15:45:09,931 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [10/25] lr 0.00131 Loss 117.3865, Train_acc 72.01
+2026-03-17 15:45:16,294 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [11/25] lr 0.00119 Loss 116.6878, Train_acc 72.19
+2026-03-17 15:45:22,629 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [12/25] lr 0.00106 Loss 116.3477, Train_acc 73.07
+2026-03-17 15:45:28,991 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [13/25] lr 0.00094 Loss 115.8882, Train_acc 73.36
+2026-03-17 15:45:35,248 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [14/25] lr 0.00081 Loss 115.5277, Train_acc 73.49
+2026-03-17 15:45:41,578 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [15/25] lr 0.00069 Loss 114.8377, Train_acc 73.67
+2026-03-17 15:45:47,848 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [16/25] lr 0.00057 Loss 114.8678, Train_acc 73.20
+2026-03-17 15:45:54,135 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [17/25] lr 0.00046 Loss 114.5257, Train_acc 73.41
+2026-03-17 15:46:00,537 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [18/25] lr 0.00036 Loss 114.6769, Train_acc 72.42
+2026-03-17 15:46:06,827 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [19/25] lr 0.00027 Loss 114.0079, Train_acc 74.61
+2026-03-17 15:46:13,155 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [20/25] lr 0.00019 Loss 113.9532, Train_acc 73.10
+2026-03-17 15:46:19,423 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [21/25] lr 0.00012 Loss 113.7918, Train_acc 74.09
+2026-03-17 15:46:25,692 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [22/25] lr 0.00007 Loss 113.7857, Train_acc 73.65
+2026-03-17 15:46:31,950 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [23/25] lr 0.00003 Loss 113.8158, Train_acc 73.80
+2026-03-17 15:46:38,274 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [24/25] lr 0.00001 Loss 113.7501, Train_acc 74.40
+2026-03-17 15:46:44,514 [conec_lora.py:549] => Domain classifier training: Task 1, Epoch [25/25] lr 0.00000 Loss 114.0373, Train_acc 73.52
+2026-03-17 15:46:44,681 [conec_lora.py:715] => Evaluating on the test set ...
+2026-03-17 15:47:02,245 [trainer.py:102] => CNN (w/o oracle): {'total': 52.1, '0': 51.17, '0_many': 51.25, '0_medium': 27.27, '0_few': -1.0, '1': 55.39, '1_many': 55.39, '1_medium': -1.0, '1_few': -1.0, '00-01': 35.5, '02-03': 76.64, '04-05': 52.77, '06-07': 58.14, '08-09': 59.29, '10-11': 46.05, 'old': 51.17, 'new': 55.39, 'many_shot': np.float64(53.32), 'medium_shot': np.float64(27.27)}
+2026-03-17 15:47:02,245 [trainer.py:107] => Accuracies (w/o oracle) for order 1: [52.11, 52.10] -> Avg.: 52.11
+2026-03-17 15:47:02,245 [trainer.py:110] => CNN (with oracle): {'total': 53.08, '0': 52.11, '0_many': 52.19, '0_medium': 27.27, '0_few': -1.0, '1': 56.54, '1_many': 56.54, '1_medium': -1.0, '1_few': -1.0, '00-01': 43.03, '02-03': 78.62, '04-05': 48.69, '06-07': 55.21, '08-09': 64.6, '10-11': 56.14, 'old': 52.11, 'new': 56.54, 'many_shot': np.float64(54.364999999999995), 'medium_shot': np.float64(27.27)}
+2026-03-17 15:47:02,245 [trainer.py:115] => Accuracies (with oracle) for order 1: [52.26, 53.08] -> Avg.: 52.67
+2026-03-17 15:47:02,245 [trainer.py:119] => Domain classification accuracies (after each domain) for order 1:  [100.00, 71.80] -> Avg.: 85.90
+2026-03-17 15:47:02,407 [trainer.py:141] => The parameters are saved after task: 1!
+2026-03-17 15:47:02,407 [conec_lora.py:109] => Learning on 12-18
+2026-03-17 15:47:02,414 [our_utils.py:157] => Number of learnable parameters of LoRAs regularized: 221184
+2026-03-17 15:47:02,414 [our_utils.py:157] => Number of learnable parameters of proxy_fc regularized: 9216
+2026-03-17 15:47:02,414 [our_utils.py:159] => Total number of learnable parameters: 230400
+2026-03-17 15:47:02,414 [conec_lora.py:161] => Training the domain 2 ...
+2026-03-17 15:47:39,422 [conec_lora.py:252] => Task 2, Epoch 1/25 => Loss 1.233, Train_accy 58.18
+2026-03-17 15:48:16,398 [conec_lora.py:252] => Task 2, Epoch 2/25 => Loss 1.000, Train_accy 62.06
+2026-03-17 15:48:53,374 [conec_lora.py:252] => Task 2, Epoch 3/25 => Loss 0.955, Train_accy 63.91
+2026-03-17 15:49:30,352 [conec_lora.py:252] => Task 2, Epoch 4/25 => Loss 0.932, Train_accy 64.52
+2026-03-17 15:50:07,316 [conec_lora.py:252] => Task 2, Epoch 5/25 => Loss 0.905, Train_accy 65.65
+2026-03-17 15:50:44,293 [conec_lora.py:252] => Task 2, Epoch 6/25 => Loss 0.890, Train_accy 65.96
+2026-03-17 15:51:21,289 [conec_lora.py:252] => Task 2, Epoch 7/25 => Loss 0.852, Train_accy 67.75
+2026-03-17 15:51:58,249 [conec_lora.py:252] => Task 2, Epoch 8/25 => Loss 0.820, Train_accy 68.28
+2026-03-17 15:52:35,208 [conec_lora.py:252] => Task 2, Epoch 9/25 => Loss 0.798, Train_accy 70.13
+2026-03-17 15:53:12,185 [conec_lora.py:252] => Task 2, Epoch 10/25 => Loss 0.764, Train_accy 71.67
+2026-03-17 15:53:49,151 [conec_lora.py:252] => Task 2, Epoch 11/25 => Loss 0.732, Train_accy 72.23
+2026-03-17 15:54:26,128 [conec_lora.py:252] => Task 2, Epoch 12/25 => Loss 0.706, Train_accy 72.99
+2026-03-17 15:55:03,108 [conec_lora.py:252] => Task 2, Epoch 13/25 => Loss 0.657, Train_accy 75.32
+2026-03-17 15:55:40,124 [conec_lora.py:252] => Task 2, Epoch 14/25 => Loss 0.618, Train_accy 77.22
+2026-03-17 15:56:17,103 [conec_lora.py:252] => Task 2, Epoch 15/25 => Loss 0.576, Train_accy 78.41
+2026-03-17 15:56:54,068 [conec_lora.py:252] => Task 2, Epoch 16/25 => Loss 0.537, Train_accy 80.48
+2026-03-17 15:57:31,037 [conec_lora.py:252] => Task 2, Epoch 17/25 => Loss 0.497, Train_accy 81.75
+2026-03-17 15:58:07,993 [conec_lora.py:252] => Task 2, Epoch 18/25 => Loss 0.458, Train_accy 83.26
+2026-03-17 15:58:44,967 [conec_lora.py:252] => Task 2, Epoch 19/25 => Loss 0.419, Train_accy 85.09
+2026-03-17 15:59:21,950 [conec_lora.py:252] => Task 2, Epoch 20/25 => Loss 0.383, Train_accy 86.14
+2026-03-17 15:59:58,933 [conec_lora.py:252] => Task 2, Epoch 21/25 => Loss 0.341, Train_accy 88.08
+2026-03-17 16:00:35,898 [conec_lora.py:252] => Task 2, Epoch 22/25 => Loss 0.330, Train_accy 88.79
+2026-03-17 16:01:12,870 [conec_lora.py:252] => Task 2, Epoch 23/25 => Loss 0.307, Train_accy 90.10
+2026-03-17 16:01:49,835 [conec_lora.py:252] => Task 2, Epoch 24/25 => Loss 0.291, Train_accy 90.25
+2026-03-17 16:02:26,807 [conec_lora.py:252] => Task 2, Epoch 25/25 => Loss 0.291, Train_accy 90.22
+2026-03-17 16:02:26,808 [conec_lora.py:381] => Calculating the prototypes for the classifier ...
+2026-03-17 16:02:26,808 [conec_lora.py:350] => Obtaining the embeddings for domain 2
+2026-03-17 16:02:38,191 [conec_lora.py:439] => Training the domain classifier ...
+2026-03-17 16:02:38,191 [conec_lora.py:424] => Finding the number of samples to be generated ...
+2026-03-17 16:02:38,191 [conec_lora.py:430] =>     We use 43 old + 21 new samples for each batch
+2026-03-17 16:02:38,265 [conec_lora.py:559] => ==> Computing the statistics ...
+2026-03-17 16:02:38,265 [conec_lora.py:293] => Obtaining the embeddings for domain 2 ...
+2026-03-17 16:02:48,628 [conec_lora.py:572] =>     Statistics are ready for task: 2
+2026-03-17 16:02:48,628 [conec_lora.py:576] => ==> Compression ...
+2026-03-17 16:04:06,696 [conec_lora.py:588] => ==> Compression is done!
+2026-03-17 16:04:06,779 [conec_lora.py:592] => => Generating synthetic embeddings
+2026-03-17 16:04:26,632 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [1/25] lr 0.00199 Loss 231.3415, Train_acc 50.29
+2026-03-17 16:04:39,183 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [2/25] lr 0.00197 Loss 223.0825, Train_acc 58.95
+2026-03-17 16:04:51,693 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [3/25] lr 0.00193 Loss 217.6466, Train_acc 59.88
+2026-03-17 16:05:04,162 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [4/25] lr 0.00188 Loss 212.6610, Train_acc 61.17
+2026-03-17 16:05:16,658 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [5/25] lr 0.00181 Loss 209.4705, Train_acc 62.63
+2026-03-17 16:05:29,164 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [6/25] lr 0.00173 Loss 207.4941, Train_acc 63.39
+2026-03-17 16:05:41,653 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [7/25] lr 0.00164 Loss 205.2263, Train_acc 64.03
+2026-03-17 16:05:54,230 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [8/25] lr 0.00154 Loss 203.8952, Train_acc 65.66
+2026-03-17 16:06:06,820 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [9/25] lr 0.00143 Loss 200.7356, Train_acc 65.95
+2026-03-17 16:06:19,356 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [10/25] lr 0.00131 Loss 199.8531, Train_acc 67.08
+2026-03-17 16:06:31,952 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [11/25] lr 0.00119 Loss 197.5498, Train_acc 67.26
+2026-03-17 16:06:44,503 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [12/25] lr 0.00106 Loss 195.4169, Train_acc 67.73
+2026-03-17 16:06:57,124 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [13/25] lr 0.00094 Loss 192.3107, Train_acc 69.44
+2026-03-17 16:07:09,673 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [14/25] lr 0.00081 Loss 189.6029, Train_acc 69.18
+2026-03-17 16:07:22,279 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [15/25] lr 0.00069 Loss 187.5871, Train_acc 70.30
+2026-03-17 16:07:34,806 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [16/25] lr 0.00057 Loss 185.7422, Train_acc 71.17
+2026-03-17 16:07:47,307 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [17/25] lr 0.00046 Loss 184.9653, Train_acc 72.15
+2026-03-17 16:07:59,897 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [18/25] lr 0.00036 Loss 183.7192, Train_acc 71.92
+2026-03-17 16:08:12,444 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [19/25] lr 0.00027 Loss 182.6190, Train_acc 72.71
+2026-03-17 16:08:25,036 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [20/25] lr 0.00019 Loss 180.4653, Train_acc 72.41
+2026-03-17 16:08:37,680 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [21/25] lr 0.00012 Loss 178.6245, Train_acc 73.70
+2026-03-17 16:08:50,118 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [22/25] lr 0.00007 Loss 177.3620, Train_acc 74.30
+2026-03-17 16:09:02,675 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [23/25] lr 0.00003 Loss 178.3631, Train_acc 74.03
+2026-03-17 16:09:15,232 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [24/25] lr 0.00001 Loss 177.7771, Train_acc 73.72
+2026-03-17 16:09:27,788 [conec_lora.py:549] => Domain classifier training: Task 2, Epoch [25/25] lr 0.00000 Loss 177.3673, Train_acc 74.51
+2026-03-17 16:09:27,984 [conec_lora.py:715] => Evaluating on the test set ...
+2026-03-17 16:09:53,384 [trainer.py:102] => CNN (w/o oracle): {'total': 52.49, '0': 50.97, '0_many': 51.1, '0_medium': 9.09, '0_few': -1.0, '1': 55.39, '1_many': 55.39, '1_medium': -1.0, '1_few': -1.0, '2': 53.71, '2_many': 53.9, '2_medium': 0.0, '2_few': -1.0, '00-01': 35.24, '02-03': 76.48, '04-05': 52.59, '06-07': 56.68, '08-09': 66.37, '10-11': 46.49, '12-13': 43.59, '14-15': 50.61, '16-17': 63.71, 'old': 51.94, 'new': 53.71, 'many_shot': np.float64(53.46333333333334), 'medium_shot': np.float64(4.545)}
+2026-03-17 16:09:53,384 [trainer.py:107] => Accuracies (w/o oracle) for order 1: [52.11, 52.10, 52.49] -> Avg.: 52.23
+2026-03-17 16:09:53,384 [trainer.py:110] => CNN (with oracle): {'total': 53.89, '0': 52.23, '0_many': 52.31, '0_medium': 27.27, '0_few': -1.0, '1': 56.44, '1_many': 56.44, '1_medium': -1.0, '1_few': -1.0, '2': 55.55, '2_many': 55.75, '2_medium': 0.0, '2_few': -1.0, '00-01': 42.77, '02-03': 78.78, '04-05': 49.06, '06-07': 55.21, '08-09': 64.6, '10-11': 55.7, '12-13': 47.69, '14-15': 47.27, '16-17': 65.55, 'old': 53.15, 'new': 55.55, 'many_shot': np.float64(54.833333333333336), 'medium_shot': np.float64(13.635)}
+2026-03-17 16:09:53,384 [trainer.py:115] => Accuracies (with oracle) for order 1: [52.26, 53.08, 53.89] -> Avg.: 53.08
+2026-03-17 16:09:53,384 [trainer.py:119] => Domain classification accuracies (after each domain) for order 1:  [100.00, 71.80, 63.79] -> Avg.: 78.53
+2026-03-17 16:09:53,565 [trainer.py:141] => The parameters are saved after task: 2!
+2026-03-17 16:09:53,565 [conec_lora.py:109] => Learning on 18-24
+2026-03-17 16:09:53,573 [our_utils.py:157] => Number of learnable parameters of LoRAs regularized: 221184
+2026-03-17 16:09:53,573 [our_utils.py:157] => Number of learnable parameters of proxy_fc regularized: 9216
+2026-03-17 16:09:53,573 [our_utils.py:159] => Total number of learnable parameters: 230400
+2026-03-17 16:09:53,574 [conec_lora.py:161] => Training the domain 3 ...
+2026-03-17 16:10:22,518 [conec_lora.py:252] => Task 3, Epoch 1/25 => Loss 1.111, Train_accy 65.84
+2026-03-17 16:10:51,445 [conec_lora.py:252] => Task 3, Epoch 2/25 => Loss 0.845, Train_accy 69.87
+2026-03-17 16:11:20,419 [conec_lora.py:252] => Task 3, Epoch 3/25 => Loss 0.831, Train_accy 70.35
+2026-03-17 16:11:49,357 [conec_lora.py:252] => Task 3, Epoch 4/25 => Loss 0.802, Train_accy 71.02
+2026-03-17 16:12:18,318 [conec_lora.py:252] => Task 3, Epoch 5/25 => Loss 0.767, Train_accy 72.86
+2026-03-17 16:12:47,282 [conec_lora.py:252] => Task 3, Epoch 6/25 => Loss 0.742, Train_accy 72.57
+2026-03-17 16:13:16,247 [conec_lora.py:252] => Task 3, Epoch 7/25 => Loss 0.712, Train_accy 74.39
+2026-03-17 16:13:45,225 [conec_lora.py:252] => Task 3, Epoch 8/25 => Loss 0.676, Train_accy 75.46
+2026-03-17 16:14:14,216 [conec_lora.py:252] => Task 3, Epoch 9/25 => Loss 0.652, Train_accy 76.05
+2026-03-17 16:14:43,215 [conec_lora.py:252] => Task 3, Epoch 10/25 => Loss 0.618, Train_accy 77.02
+2026-03-17 16:15:12,161 [conec_lora.py:252] => Task 3, Epoch 11/25 => Loss 0.595, Train_accy 78.49
+2026-03-17 16:15:41,105 [conec_lora.py:252] => Task 3, Epoch 12/25 => Loss 0.550, Train_accy 80.08
+2026-03-17 16:16:10,062 [conec_lora.py:252] => Task 3, Epoch 13/25 => Loss 0.523, Train_accy 80.79
+2026-03-17 16:16:39,013 [conec_lora.py:252] => Task 3, Epoch 14/25 => Loss 0.477, Train_accy 82.76
+2026-03-17 16:17:08,037 [conec_lora.py:252] => Task 3, Epoch 15/25 => Loss 0.438, Train_accy 84.29
+2026-03-17 16:17:37,017 [conec_lora.py:252] => Task 3, Epoch 16/25 => Loss 0.412, Train_accy 85.13
+2026-03-17 16:18:05,995 [conec_lora.py:252] => Task 3, Epoch 17/25 => Loss 0.365, Train_accy 86.99
+2026-03-17 16:18:34,953 [conec_lora.py:252] => Task 3, Epoch 18/25 => Loss 0.329, Train_accy 88.77
+2026-03-17 16:19:03,915 [conec_lora.py:252] => Task 3, Epoch 19/25 => Loss 0.306, Train_accy 89.47
+2026-03-17 16:19:32,866 [conec_lora.py:252] => Task 3, Epoch 20/25 => Loss 0.268, Train_accy 91.20
+2026-03-17 16:20:01,823 [conec_lora.py:252] => Task 3, Epoch 21/25 => Loss 0.250, Train_accy 91.83
+2026-03-17 16:20:30,783 [conec_lora.py:252] => Task 3, Epoch 22/25 => Loss 0.225, Train_accy 92.80
+2026-03-17 16:20:59,724 [conec_lora.py:252] => Task 3, Epoch 23/25 => Loss 0.213, Train_accy 93.65
+2026-03-17 16:21:28,660 [conec_lora.py:252] => Task 3, Epoch 24/25 => Loss 0.209, Train_accy 93.78
+2026-03-17 16:21:57,602 [conec_lora.py:252] => Task 3, Epoch 25/25 => Loss 0.203, Train_accy 93.85
+2026-03-17 16:21:57,603 [conec_lora.py:381] => Calculating the prototypes for the classifier ...
+2026-03-17 16:21:57,603 [conec_lora.py:350] => Obtaining the embeddings for domain 3
+2026-03-17 16:22:06,735 [conec_lora.py:439] => Training the domain classifier ...
+2026-03-17 16:22:06,735 [conec_lora.py:424] => Finding the number of samples to be generated ...
+2026-03-17 16:22:06,735 [conec_lora.py:430] =>     We use 48 old + 16 new samples for each batch
+2026-03-17 16:22:06,811 [conec_lora.py:559] => ==> Computing the statistics ...
+2026-03-17 16:22:06,811 [conec_lora.py:293] => Obtaining the embeddings for domain 3 ...
+2026-03-17 16:22:15,061 [conec_lora.py:572] =>     Statistics are ready for task: 3
+2026-03-17 16:22:15,062 [conec_lora.py:576] => ==> Compression ...
+2026-03-17 16:23:46,160 [conec_lora.py:588] => ==> Compression is done!
+2026-03-17 16:23:46,234 [conec_lora.py:592] => => Generating synthetic embeddings
+2026-03-17 16:24:06,058 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [1/25] lr 0.00199 Loss 288.9354, Train_acc 49.14
+2026-03-17 16:24:16,032 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [2/25] lr 0.00197 Loss 277.5789, Train_acc 55.16
+2026-03-17 16:24:25,970 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [3/25] lr 0.00193 Loss 271.7686, Train_acc 57.18
+2026-03-17 16:24:35,973 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [4/25] lr 0.00188 Loss 267.2851, Train_acc 59.29
+2026-03-17 16:24:45,921 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [5/25] lr 0.00181 Loss 264.2727, Train_acc 60.06
+2026-03-17 16:24:55,943 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [6/25] lr 0.00173 Loss 259.8714, Train_acc 62.81
+2026-03-17 16:25:06,034 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [7/25] lr 0.00164 Loss 256.6063, Train_acc 63.92
+2026-03-17 16:25:16,017 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [8/25] lr 0.00154 Loss 255.4547, Train_acc 65.59
+2026-03-17 16:25:26,024 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [9/25] lr 0.00143 Loss 252.5710, Train_acc 64.58
+2026-03-17 16:25:36,055 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [10/25] lr 0.00131 Loss 249.7796, Train_acc 68.12
+2026-03-17 16:25:46,109 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [11/25] lr 0.00119 Loss 248.5172, Train_acc 67.24
+2026-03-17 16:25:56,138 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [12/25] lr 0.00106 Loss 244.8473, Train_acc 71.16
+2026-03-17 16:26:06,184 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [13/25] lr 0.00094 Loss 243.0467, Train_acc 71.89
+2026-03-17 16:26:16,133 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [14/25] lr 0.00081 Loss 240.4105, Train_acc 71.79
+2026-03-17 16:26:26,276 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [15/25] lr 0.00069 Loss 238.7557, Train_acc 73.42
+2026-03-17 16:26:36,256 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [16/25] lr 0.00057 Loss 236.4303, Train_acc 73.21
+2026-03-17 16:26:46,312 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [17/25] lr 0.00046 Loss 234.1307, Train_acc 74.79
+2026-03-17 16:26:56,312 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [18/25] lr 0.00036 Loss 229.8215, Train_acc 74.74
+2026-03-17 16:27:06,426 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [19/25] lr 0.00027 Loss 228.6453, Train_acc 74.06
+2026-03-17 16:27:16,385 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [20/25] lr 0.00019 Loss 226.5136, Train_acc 75.91
+2026-03-17 16:27:26,441 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [21/25] lr 0.00012 Loss 225.0244, Train_acc 76.42
+2026-03-17 16:27:36,430 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [22/25] lr 0.00007 Loss 223.8413, Train_acc 76.90
+2026-03-17 16:27:46,524 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [23/25] lr 0.00003 Loss 222.7494, Train_acc 76.76
+2026-03-17 16:27:56,494 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [24/25] lr 0.00001 Loss 222.8315, Train_acc 77.07
+2026-03-17 16:28:06,567 [conec_lora.py:549] => Domain classifier training: Task 3, Epoch [25/25] lr 0.00000 Loss 221.9182, Train_acc 76.63
+2026-03-17 16:28:06,757 [conec_lora.py:715] => Evaluating on the test set ...
+2026-03-17 16:28:38,690 [trainer.py:102] => CNN (w/o oracle): {'total': 51.87, '0': 50.56, '0_many': 50.69, '0_medium': 9.09, '0_few': -1.0, '1': 52.25, '1_many': 52.25, '1_medium': -1.0, '1_few': -1.0, '2': 53.09, '2_many': 53.29, '2_medium': 0.0, '2_few': -1.0, '3': 53.01, '3_many': 53.01, '3_medium': -1.0, '3_few': -1.0, '00-01': 38.27, '02-03': 76.97, '04-05': 49.42, '06-07': 54.56, '08-09': 62.83, '10-11': 40.79, '12-13': 43.59, '14-15': 49.39, '16-17': 62.79, '18-19': 56.16, '20-21': 30.77, '22-23': 36.36, 'old': 51.6, 'new': 53.01, 'many_shot': np.float64(52.309999999999995), 'medium_shot': np.float64(4.545)}
+2026-03-17 16:28:38,690 [trainer.py:107] => Accuracies (w/o oracle) for order 1: [52.11, 52.10, 52.49, 51.87] -> Avg.: 52.14
+2026-03-17 16:28:38,690 [trainer.py:110] => CNN (with oracle): {'total': 54.1, '0': 52.08, '0_many': 52.16, '0_medium': 27.27, '0_few': -1.0, '1': 56.44, '1_many': 56.44, '1_medium': -1.0, '1_few': -1.0, '2': 55.7, '2_many': 55.9, '2_medium': 0.0, '2_few': -1.0, '3': 55.1, '3_many': 55.1, '3_medium': -1.0, '3_few': -1.0, '00-01': 42.77, '02-03': 78.78, '04-05': 48.75, '06-07': 55.21, '08-09': 64.6, '10-11': 55.7, '12-13': 47.82, '14-15': 47.58, '16-17': 65.67, '18-19': 58.21, '20-21': 30.77, '22-23': 40.91, 'old': 53.86, 'new': 55.1, 'many_shot': np.float64(54.9), 'medium_shot': np.float64(13.635)}
+2026-03-17 16:28:38,690 [trainer.py:115] => Accuracies (with oracle) for order 1: [52.26, 53.08, 53.89, 54.10] -> Avg.: 53.33
+2026-03-17 16:28:38,690 [trainer.py:119] => Domain classification accuracies (after each domain) for order 1:  [100.00, 71.80, 63.79, 62.86] -> Avg.: 74.61
+2026-03-17 16:28:38,987 [trainer.py:141] => The parameters are saved after task: 3!
+2026-03-17 16:28:38,987 [conec_lora.py:109] => Learning on 24-30
+2026-03-17 16:28:38,998 [our_utils.py:157] => Number of learnable parameters of LoRAs regularized: 221184
+2026-03-17 16:28:38,998 [our_utils.py:157] => Number of learnable parameters of proxy_fc regularized: 9216
+2026-03-17 16:28:38,998 [our_utils.py:159] => Total number of learnable parameters: 230400
+2026-03-17 16:28:38,998 [conec_lora.py:161] => Training the domain 4 ...
+2026-03-17 16:29:26,277 [conec_lora.py:252] => Task 4, Epoch 1/25 => Loss 1.278, Train_accy 57.26
+2026-03-17 16:30:13,593 [conec_lora.py:252] => Task 4, Epoch 2/25 => Loss 1.054, Train_accy 61.38
+2026-03-17 16:31:00,903 [conec_lora.py:252] => Task 4, Epoch 3/25 => Loss 1.022, Train_accy 62.41
+2026-03-17 16:31:48,210 [conec_lora.py:252] => Task 4, Epoch 4/25 => Loss 0.992, Train_accy 63.42
+2026-03-17 16:32:35,544 [conec_lora.py:252] => Task 4, Epoch 5/25 => Loss 0.967, Train_accy 64.44
+2026-03-17 16:33:22,858 [conec_lora.py:252] => Task 4, Epoch 6/25 => Loss 0.940, Train_accy 64.77
+2026-03-17 16:34:10,156 [conec_lora.py:252] => Task 4, Epoch 7/25 => Loss 0.916, Train_accy 65.80
+2026-03-17 16:34:57,469 [conec_lora.py:252] => Task 4, Epoch 8/25 => Loss 0.887, Train_accy 67.33
+2026-03-17 16:35:44,834 [conec_lora.py:252] => Task 4, Epoch 9/25 => Loss 0.860, Train_accy 68.42
+2026-03-17 16:36:32,140 [conec_lora.py:252] => Task 4, Epoch 10/25 => Loss 0.835, Train_accy 69.15
+2026-03-17 16:37:19,450 [conec_lora.py:252] => Task 4, Epoch 11/25 => Loss 0.800, Train_accy 70.56
+2026-03-17 16:38:06,797 [conec_lora.py:252] => Task 4, Epoch 12/25 => Loss 0.765, Train_accy 71.49
+2026-03-17 16:38:54,123 [conec_lora.py:252] => Task 4, Epoch 13/25 => Loss 0.739, Train_accy 72.62
+2026-03-17 16:39:41,475 [conec_lora.py:252] => Task 4, Epoch 14/25 => Loss 0.696, Train_accy 74.60
+2026-03-17 16:40:28,821 [conec_lora.py:252] => Task 4, Epoch 15/25 => Loss 0.658, Train_accy 76.10
+2026-03-17 16:41:16,130 [conec_lora.py:252] => Task 4, Epoch 16/25 => Loss 0.618, Train_accy 77.28
+2026-03-17 16:42:03,480 [conec_lora.py:252] => Task 4, Epoch 17/25 => Loss 0.577, Train_accy 78.68
+2026-03-17 16:42:50,817 [conec_lora.py:252] => Task 4, Epoch 18/25 => Loss 0.549, Train_accy 80.44
+2026-03-17 16:43:38,133 [conec_lora.py:252] => Task 4, Epoch 19/25 => Loss 0.506, Train_accy 82.27
+2026-03-17 16:44:25,458 [conec_lora.py:252] => Task 4, Epoch 20/25 => Loss 0.463, Train_accy 83.95
+2026-03-17 16:45:12,770 [conec_lora.py:252] => Task 4, Epoch 21/25 => Loss 0.440, Train_accy 84.65
+2026-03-17 16:46:00,104 [conec_lora.py:252] => Task 4, Epoch 22/25 => Loss 0.420, Train_accy 85.61
+2026-03-17 16:46:47,419 [conec_lora.py:252] => Task 4, Epoch 23/25 => Loss 0.397, Train_accy 86.71
+2026-03-17 16:47:34,732 [conec_lora.py:252] => Task 4, Epoch 24/25 => Loss 0.387, Train_accy 87.19
+2026-03-17 16:48:22,063 [conec_lora.py:252] => Task 4, Epoch 25/25 => Loss 0.378, Train_accy 87.40
+2026-03-17 16:48:22,064 [conec_lora.py:381] => Calculating the prototypes for the classifier ...
+2026-03-17 16:48:22,064 [conec_lora.py:350] => Obtaining the embeddings for domain 4
+2026-03-17 16:48:36,668 [conec_lora.py:439] => Training the domain classifier ...
+2026-03-17 16:48:36,668 [conec_lora.py:424] => Finding the number of samples to be generated ...
+2026-03-17 16:48:36,668 [conec_lora.py:430] =>     We use 52 old + 12 new samples for each batch
+2026-03-17 16:48:36,742 [conec_lora.py:559] => ==> Computing the statistics ...
+2026-03-17 16:48:36,742 [conec_lora.py:293] => Obtaining the embeddings for domain 4 ...
+2026-03-17 16:48:49,871 [conec_lora.py:572] =>     Statistics are ready for task: 4
+2026-03-17 16:48:49,973 [conec_lora.py:592] => => Generating synthetic embeddings
+2026-03-17 16:49:23,177 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [1/25] lr 0.00199 Loss 329.0502, Train_acc 52.57
+2026-03-17 16:49:39,322 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [2/25] lr 0.00197 Loss 311.8779, Train_acc 60.17
+2026-03-17 16:49:55,728 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [3/25] lr 0.00193 Loss 303.1121, Train_acc 61.95
+2026-03-17 16:50:11,946 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [4/25] lr 0.00188 Loss 293.0757, Train_acc 64.39
+2026-03-17 16:50:28,286 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [5/25] lr 0.00181 Loss 281.8759, Train_acc 65.56
+2026-03-17 16:50:44,454 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [6/25] lr 0.00173 Loss 274.9383, Train_acc 67.76
+2026-03-17 16:51:00,714 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [7/25] lr 0.00164 Loss 271.8049, Train_acc 68.54
+2026-03-17 16:51:16,971 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [8/25] lr 0.00154 Loss 262.0893, Train_acc 70.12
+2026-03-17 16:51:33,327 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [9/25] lr 0.00143 Loss 255.3451, Train_acc 72.14
+2026-03-17 16:51:49,588 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [10/25] lr 0.00131 Loss 251.1791, Train_acc 71.42
+2026-03-17 16:52:05,941 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [11/25] lr 0.00119 Loss 248.0000, Train_acc 74.08
+2026-03-17 16:52:22,153 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [12/25] lr 0.00106 Loss 245.0321, Train_acc 74.18
+2026-03-17 16:52:38,299 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [13/25] lr 0.00094 Loss 243.0815, Train_acc 75.19
+2026-03-17 16:52:54,499 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [14/25] lr 0.00081 Loss 239.5405, Train_acc 77.15
+2026-03-17 16:53:10,663 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [15/25] lr 0.00069 Loss 236.9031, Train_acc 77.28
+2026-03-17 16:53:26,810 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [16/25] lr 0.00057 Loss 234.6607, Train_acc 77.85
+2026-03-17 16:53:42,952 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [17/25] lr 0.00046 Loss 233.5491, Train_acc 78.51
+2026-03-17 16:53:59,490 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [18/25] lr 0.00036 Loss 231.7791, Train_acc 79.70
+2026-03-17 16:54:15,694 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [19/25] lr 0.00027 Loss 229.8548, Train_acc 79.78
+2026-03-17 16:54:32,068 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [20/25] lr 0.00019 Loss 228.7538, Train_acc 80.86
+2026-03-17 16:54:48,254 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [21/25] lr 0.00012 Loss 227.3778, Train_acc 81.20
+2026-03-17 16:55:04,493 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [22/25] lr 0.00007 Loss 227.0111, Train_acc 81.25
+2026-03-17 16:55:20,697 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [23/25] lr 0.00003 Loss 227.5694, Train_acc 81.57
+2026-03-17 16:55:36,805 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [24/25] lr 0.00001 Loss 225.8270, Train_acc 81.55
+2026-03-17 16:55:53,103 [conec_lora.py:549] => Domain classifier training: Task 4, Epoch [25/25] lr 0.00000 Loss 226.1023, Train_acc 81.85
+2026-03-17 16:55:53,330 [conec_lora.py:715] => Evaluating on the test set ...
+2026-03-17 16:56:36,062 [trainer.py:102] => CNN (w/o oracle): {'total': 51.69, '0': 49.24, '0_many': 49.34, '0_medium': 18.18, '0_few': -1.0, '1': 52.57, '1_many': 52.57, '1_medium': -1.0, '1_few': -1.0, '2': 53.4, '2_many': 53.59, '2_medium': 0.0, '2_few': -1.0, '3': 53.99, '3_many': 53.99, '3_medium': -1.0, '3_few': -1.0, '4': 51.94, '4_many': 51.94, '4_medium': -1.0, '4_few': -1.0, '00-01': 38.7, '02-03': 74.51, '04-05': 47.29, '06-07': 56.19, '08-09': 62.83, '10-11': 37.72, '12-13': 43.59, '14-15': 49.39, '16-17': 63.48, '18-19': 56.69, '20-21': 31.73, '22-23': 42.73, '24-25': 52.56, '26-27': 47.84, '28-29': 52.16, 'old': 51.61, 'new': 51.94, 'many_shot': np.float64(52.286), 'medium_shot': np.float64(9.09)}
+2026-03-17 16:56:36,062 [trainer.py:107] => Accuracies (w/o oracle) for order 1: [52.11, 52.10, 52.49, 51.87, 51.69] -> Avg.: 52.05
+2026-03-17 16:56:36,062 [trainer.py:110] => CNN (with oracle): {'total': 54.38, '0': 52.06, '0_many': 52.14, '0_medium': 27.27, '0_few': -1.0, '1': 56.54, '1_many': 56.54, '1_medium': -1.0, '1_few': -1.0, '2': 55.7, '2_many': 55.9, '2_medium': 0.0, '2_few': -1.0, '3': 55.23, '3_many': 55.23, '3_medium': -1.0, '3_few': -1.0, '4': 55.18, '4_many': 55.18, '4_medium': -1.0, '4_few': -1.0, '00-01': 42.68, '02-03': 78.62, '04-05': 48.81, '06-07': 55.37, '08-09': 64.6, '10-11': 55.7, '12-13': 47.82, '14-15': 47.88, '16-17': 65.55, '18-19': 58.21, '20-21': 31.73, '22-23': 41.82, '24-25': 55.0, '26-27': 49.02, '28-29': 57.31, 'old': 54.13, 'new': 55.18, 'many_shot': np.float64(54.998000000000005), 'medium_shot': np.float64(13.635)}
+2026-03-17 16:56:36,062 [trainer.py:115] => Accuracies (with oracle) for order 1: [52.26, 53.08, 53.89, 54.10, 54.38] -> Avg.: 53.54
+2026-03-17 16:56:36,062 [trainer.py:119] => Domain classification accuracies (after each domain) for order 1:  [100.00, 71.80, 63.79, 62.86, 61.16] -> Avg.: 71.92
+2026-03-17 16:56:36,225 [trainer.py:141] => The parameters are saved after task: 4!
+2026-03-17 16:56:36,225 [trainer.py:127] => The process is finished!

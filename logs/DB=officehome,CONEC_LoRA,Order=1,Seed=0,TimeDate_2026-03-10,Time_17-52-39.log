@@ -1,0 +1,94 @@
+2026-03-10 17:52:39,509 [trainer.py:178] => ----------------------------------------------------------------------------------------------------
+2026-03-10 17:52:39,530 [trainer.py:182] => Python version: 3.12.3
+2026-03-10 17:52:39,531 [trainer.py:183] => PyTorch version: 2.10.0+cu130,TorchVision version: 0.25.0+cu130
+2026-03-10 17:52:39,531 [trainer.py:184] => GPU Name: NVIDIA GeForce RTX 4090
+2026-03-10 17:52:39,531 [trainer.py:185] => Driver: 580.126.09
+2026-03-10 17:52:39,531 [trainer.py:188] => config: ./exps/officehome.json
+2026-03-10 17:52:39,531 [trainer.py:188] => order: 1
+2026-03-10 17:52:39,531 [trainer.py:188] => device: [device(type='cuda', index=0)]
+2026-03-10 17:52:39,531 [trainer.py:188] => prefix: CONEC_LoRA
+2026-03-10 17:52:39,531 [trainer.py:188] => dataset: officehome
+2026-03-10 17:52:39,531 [trainer.py:188] => data_path: /home/rizal/rizal_projects/CONEC-LoRA/Datasets/DIL/OfficeHomeDataset_10072016/
+2026-03-10 17:52:39,531 [trainer.py:188] => total_sessions: 4
+2026-03-10 17:52:39,531 [trainer.py:188] => shuffle: False
+2026-03-10 17:52:39,531 [trainer.py:188] => init_cls: 65
+2026-03-10 17:52:39,531 [trainer.py:188] => increment: 65
+2026-03-10 17:52:39,531 [trainer.py:188] => model_name: conec_lora
+2026-03-10 17:52:39,531 [trainer.py:188] => backbone_type: vit_base_patch16_224_conec_lora
+2026-03-10 17:52:39,531 [trainer.py:188] => temporary_classifier_type: ClassifierType.Single_Stochastic_Classifier
+2026-03-10 17:52:39,531 [trainer.py:188] => classifier_type: ClassifierType.Separate_Stochastic_Classifiers
+2026-03-10 17:52:39,531 [trainer.py:188] => use_proxy_classifier: True
+2026-03-10 17:52:39,531 [trainer.py:188] => LoRA_downsize_dimension: 8
+2026-03-10 17:52:39,531 [trainer.py:188] => generation_strategy: GenerationStrategy.GMM_with_generator_loss
+2026-03-10 17:52:39,531 [trainer.py:188] => n_components: 2
+2026-03-10 17:52:39,531 [trainer.py:188] => use_CLS_token_for_domain_classification: False
+2026-03-10 17:52:39,531 [trainer.py:188] => normalize_features_for_domain_classification: False
+2026-03-10 17:52:39,531 [trainer.py:188] => chosen_layers_for_intermediate_domain_classifiers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
+2026-03-10 17:52:39,531 [trainer.py:188] => confidence_threshold: 0.9
+2026-03-10 17:52:39,531 [trainer.py:188] => freeze_B_matrices_in_shared_LoRAs: True
+2026-03-10 17:52:39,531 [trainer.py:188] => epochs: 40
+2026-03-10 17:52:39,531 [trainer.py:188] => epochs_domain_classifier_training: 40
+2026-03-10 17:52:39,531 [trainer.py:188] => use_transformation_module: True
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_default: 0.02
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_LoRAs: 0.02
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_classifier: 0.02
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_temporary_classifier: 0.02
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_Auxiliary_network: 0.02
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_domain_classifiers: 0.002
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_transformation_module: 0.0001
+2026-03-10 17:52:39,532 [trainer.py:188] => weight_decay: 0.0002
+2026-03-10 17:52:39,532 [trainer.py:188] => weight_decay_classifiers: 2e-05
+2026-03-10 17:52:39,532 [trainer.py:188] => weight_decay_domain_classifiers: 0.0002
+2026-03-10 17:52:39,532 [trainer.py:188] => weight_decay_transformation_module: 0.0002
+2026-03-10 17:52:39,532 [trainer.py:188] => bias_domain_classifier: False
+2026-03-10 17:52:39,532 [trainer.py:188] => min_lr: 0
+2026-03-10 17:52:39,532 [trainer.py:188] => optimizer: sgd
+2026-03-10 17:52:39,532 [trainer.py:188] => scheduler: cosine
+2026-03-10 17:52:39,532 [trainer.py:188] => lambda_1: 5.0
+2026-03-10 17:52:39,532 [trainer.py:188] => lambda_2: 2.0
+2026-03-10 17:52:39,532 [trainer.py:188] => margin: 1.0
+2026-03-10 17:52:39,532 [trainer.py:188] => kd_temperature: 2.0
+2026-03-10 17:52:39,532 [trainer.py:188] => LoRA_qkv_mask: [1, 0, 1]
+2026-03-10 17:52:39,532 [trainer.py:188] => LoRA_shared_layers_ids_list: ['0', '1', '2', '3', '4', '5']
+2026-03-10 17:52:39,532 [trainer.py:188] => LoRA_domain_specfic_layers_ids_list: ['6', '7', '8', '9', '10', '11']
+2026-03-10 17:52:39,532 [trainer.py:188] => use_block_weight: False
+2026-03-10 17:52:39,532 [trainer.py:188] => use_reweight: False
+2026-03-10 17:52:39,532 [trainer.py:188] => embd_dim: 768
+2026-03-10 17:52:39,532 [trainer.py:188] => seed: 0
+2026-03-10 17:52:39,532 [trainer.py:188] => epsilon: 1e-08
+2026-03-10 17:52:39,532 [trainer.py:188] => init_milestones: [20, 30, 40]
+2026-03-10 17:52:39,532 [trainer.py:188] => lr_default_decay: 0.1
+2026-03-10 17:52:39,532 [trainer.py:188] => milestones: [20, 30]
+2026-03-10 17:52:39,532 [trainer.py:188] => batch_size: 64
+2026-03-10 17:52:39,532 [trainer.py:188] => num_workers: 8
+2026-03-10 17:52:39,532 [trainer.py:188] => debugging: False
+2026-03-10 17:52:39,532 [trainer.py:188] => logdir: logs
+2026-03-10 17:52:39,533 [trainer.py:188] => save_last_model: False
+2026-03-10 17:52:39,533 [trainer.py:188] => save_model_after_each_task: False
+2026-03-10 17:52:39,533 [trainer.py:188] => load_path: 
+2026-03-10 17:52:39,533 [trainer.py:188] => temperature_stochastic_classifier: 16.0
+2026-03-10 17:52:39,533 [trainer.py:188] => max_iter_for_GMM: 100
+2026-03-10 17:52:39,533 [trainer.py:188] => tol_for_GMM: 0.001
+2026-03-10 17:52:39,533 [trainer.py:188] => cache_synthetic_embeddings: True
+2026-03-10 17:52:39,533 [trainer.py:188] => max_number_of_embeddings_in_memory: 100000000.0
+2026-03-10 17:52:39,533 [trainer.py:188] => UMAP: False
+2026-03-10 17:52:39,533 [trainer.py:189] => ----------------------------------------------------------------------------------------------------
+2026-03-10 17:52:39,555 [data_manager.py:165] => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259]
+2026-03-10 17:52:40,436 [_builder.py:217] => Loading pretrained weights from Hugging Face hub (timm/vit_base_patch16_224.augreg2_in21k_ft_in1k)
+2026-03-10 17:52:40,729 [_client.py:1025] => HTTP Request: HEAD https://huggingface.co/timm/vit_base_patch16_224.augreg2_in21k_ft_in1k/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-03-10 17:52:40,730 [_http.py:916] => Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-10 17:52:40,730 [_hub.py:232] => [timm/vit_base_patch16_224.augreg2_in21k_ft_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2026-03-10 17:52:40,778 [conec_lora.py:109] => Learning on 0-65
+2026-03-10 17:52:40,821 [our_utils.py:157] => Number of learnable parameters of LoRAs regularized: 221184
+2026-03-10 17:52:40,821 [our_utils.py:157] => Number of learnable parameters of proxy_fc regularized: 99840
+2026-03-10 17:52:40,821 [our_utils.py:159] => Total number of learnable parameters: 321024
+2026-03-10 17:52:40,822 [conec_lora.py:161] => Training the domain 0 ...
+2026-03-10 17:52:46,167 [conec_lora.py:237] => Task 0, Epoch 1/40 => Loss 4.446, Train_accy 53.18
+2026-03-10 17:52:51,263 [conec_lora.py:237] => Task 0, Epoch 2/40 => Loss 1.338, Train_accy 86.17
+2026-03-10 17:52:56,357 [conec_lora.py:237] => Task 0, Epoch 3/40 => Loss 0.845, Train_accy 91.38
+2026-03-10 17:53:01,450 [conec_lora.py:237] => Task 0, Epoch 4/40 => Loss 0.703, Train_accy 93.11
+2026-03-10 17:53:06,560 [conec_lora.py:237] => Task 0, Epoch 5/40 => Loss 0.589, Train_accy 94.16
+2026-03-10 17:53:11,686 [conec_lora.py:237] => Task 0, Epoch 6/40 => Loss 0.527, Train_accy 95.83
+2026-03-10 17:53:16,813 [conec_lora.py:237] => Task 0, Epoch 7/40 => Loss 0.454, Train_accy 96.30
+2026-03-10 17:53:21,952 [conec_lora.py:237] => Task 0, Epoch 8/40 => Loss 0.430, Train_accy 97.16
+2026-03-10 17:53:27,089 [conec_lora.py:237] => Task 0, Epoch 9/40 => Loss 0.382, Train_accy 97.05
