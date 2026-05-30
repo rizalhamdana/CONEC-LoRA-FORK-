@@ -1,7 +1,7 @@
 {
     "prefix": "CONEC_LoRA",
     "dataset": "deforest_dil",
-    "data_path": "/home/rizal/rizal_projects/DeforestDIL/datasets/deforest_dil",
+    "data_path": "/newEra/shared/Datasets/deforest_dil",
     "total_sessions": 5,
     "shuffle": false,
     "init_cls": 6,
